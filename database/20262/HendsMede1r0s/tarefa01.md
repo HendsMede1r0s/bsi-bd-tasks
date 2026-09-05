@@ -43,3 +43,11 @@ __Durabilidade__, pois nesse caso, os dados não foram realmente salvos no armaz
 ## d) Uma transferência que levaria o saldo abaixo do limite permitido é rejeitada pelo banco.
 
 __Consistência__, pois o sistema impõe que para fazer uma transação, essa mesma transação não podia deixar a conta abaixo do saldo mínimo, caso a pessoa coloque um valor que leve sua conta ao abaixo do saldo mínimo, o sistema nega a transação. 
+
+
+
+# Q5. Um SGBD trata dos seguintes aspectos: recuperação, integridade, redundância e inconsistência. Explique cada um deles e descreva como o SGBD os gerencia.
+1. __Recuperação:__ Quando o sistema, mesmo após um erro, não corrompa. ou seja, a capicidade do sistema não perder nada e recuperar dados mesmo após algum acaso. Nos SGBDs todos os dados e informações estão guardados no armazenamento e quando ocorre algum erro, os dados voltam a ser como eram antes.
+2. __Integridade:__ É o fato do sistema ter restrições para qualquer operação, para manter toda a literal integralidade. Em um SGBD por exemplo, quando estamos cadastrando uma nova informação ou dado, é preciso que o usuário o coloque de forma correta com base nas regras do SGBD, como um nome só podendo ter letras, e um número de telefone só podendo ter números, onde caso essas regras sejam quebradas, o sistema irá detectar e impedir o processo. 
+3. __Redundância:__ A redundância ocorre quando há dados literalmente iguais em diferentes lugares do banco de dados. Em um SGBD por exemplo, é de suma impotância que não ocora nenhuma redundância nos dados, pois dois ou mais perfis da mesma pessoa com mesmo email, cpf ou número de telefone pode dar erros no futuro quanto ao encontro dessa pessoa no banco de dados, além de gastar armazenamento inutilmente.
+4. __Inconsistência:__ A inconsistência ocorre quando há informações redundantes, mas com algum dado inconsistente ou diferente. No SGBD, para não ocorrer inconsistências, quando um dado muda, o sistema muda todas as cópias junto. 
