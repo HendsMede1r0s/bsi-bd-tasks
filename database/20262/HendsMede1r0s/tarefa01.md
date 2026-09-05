@@ -1,0 +1,5 @@
+# Q1 - Descreva o que é um Banco de Dados e o que é um Sistema Gerenciador de Banco de Dados. Cite exemplos de Bancos de Dados e seus SGBDs.
+
+* Um __Banco de Dados__ é um lugar onde é armazenados dados e informações com um certo propósito.
+* Já o __Sistema Gerenciador de Banco de Dados__ é um sistema onde pegamos o banco de dados e fazemos operações de CRUD, como cadastrar, visualizar, excluir ou editar alguma informação do banco de dados.
+* Um exemplo de como os dois trabalham juntos pode ser um banco. Cada banco tem sua base de dados de seus clientes, ou seja, suas informações, como seu cpf, nome, contato, senhas, etc. Todas essas informações são guardadas num banco de dados, e com ajuda dos SGBDs os funcionários do banco podem cadastrar um cliente novo ao banco de dados, puxar informações específicas, mudar algum dado de alguém, ou excluir alguma informação do BD.e para fazer esses procesos podem ser usados MySQL, Oracle e outros.
