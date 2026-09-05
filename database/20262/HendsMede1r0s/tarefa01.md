@@ -23,3 +23,23 @@
 
 4. __Durabilidade:__ Os processos feitos com os dados e informações do banco de dados, se feitos sem nenhum problema, são salvos pra sempre no banco de dados. e mesmo, que depois, ocorra problema de internet ou energia, os dados continuarão salvos no BD. Sem ter o perigo de perda. Sem essa durabilidade, dados e informações importantes seriam perdidos. 
     * __Ex:__ Caso o cliente faça uma transação, e essa transação for completa, o sistema vai cadastrar uma nova transação, no histórico de transações linkada ao perfil daquela pessoa, no banco dados onde esse pagamento do cliente será salvo permanentemente no armazenamento do BD, e mesmo que ocorra erros futuros, esse dado continuará lá sem ser corrompido.
+
+
+
+# Q4. Para cada cenário abaixo, indique qual(is) propriedade(s) ACID está(ão) em jogo e justifique sua resposta: 
+
+## a) Queda de energia no meio de uma transferência deixou o valor debitado da conta de origem, mas não creditado na conta de destino. 
+
+__Atomicidade__, que não foi respeitada, pois foi feito uma operação, e por causa de um erro, ou seja, a queda de energia, o processo ainda assim foi concluido, não debitando o dinheiro na conta destino, além da perda de dinheiro da conta de origem, o dinheiro foi perdido. 
+
+## b) Dois atendentes debitam, ao mesmo tempo, o mesmo saldo de uma conta. 
+
+__Isolamento__, pois há a operação em conjunto e ao mesmo tempo de de duas transações, e as duas são feitas sem problemas, tambem ao mesmo tempo, sem cruzamento entre elas, ocorrendo o isolamento entre elas, para que uma não corrompa o processo da outra.
+
+## c) O sistema confirma a operação, mas após reiniciar o servidor o dado foi perdido. 
+
+__Durabilidade__, pois nesse caso, os dados não foram realmente salvos no armazenamento do banco de dados, ou seja, mesmo com a operação confirmada, se os dados não foram salvos eles irão sumir.
+
+## d) Uma transferência que levaria o saldo abaixo do limite permitido é rejeitada pelo banco.
+
+__Consistência__, pois o sistema impõe que para fazer uma transação, essa mesma transação não podia deixar a conta abaixo do saldo mínimo, caso a pessoa coloque um valor que leve sua conta ao abaixo do saldo mínimo, o sistema nega a transação. 
