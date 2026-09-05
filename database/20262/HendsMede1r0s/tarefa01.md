@@ -50,4 +50,86 @@ __Consistência__, pois o sistema impõe que para fazer uma transação, essa me
 1. __Recuperação:__ Quando o sistema, mesmo após um erro, não corrompa. ou seja, a capicidade do sistema não perder nada e recuperar dados mesmo após algum acaso. Nos SGBDs todos os dados e informações estão guardados no armazenamento e quando ocorre algum erro, os dados voltam a ser como eram antes.
 2. __Integridade:__ É o fato do sistema ter restrições para qualquer operação, para manter toda a literal integralidade. Em um SGBD por exemplo, quando estamos cadastrando uma nova informação ou dado, é preciso que o usuário o coloque de forma correta com base nas regras do SGBD, como um nome só podendo ter letras, e um número de telefone só podendo ter números, onde caso essas regras sejam quebradas, o sistema irá detectar e impedir o processo. 
 3. __Redundância:__ A redundância ocorre quando há dados literalmente iguais em diferentes lugares do banco de dados. Em um SGBD por exemplo, é de suma impotância que não ocora nenhuma redundância nos dados, pois dois ou mais perfis da mesma pessoa com mesmo email, cpf ou número de telefone pode dar erros no futuro quanto ao encontro dessa pessoa no banco de dados, além de gastar armazenamento inutilmente.
-4. __Inconsistência:__ A inconsistência ocorre quando há informações redundantes, mas com algum dado inconsistente ou diferente. No SGBD, para não ocorrer inconsistências, quando um dado muda, o sistema muda todas as cópias junto. 
+4. __Inconsistência:__ A inconsistência ocorre quando há informações redundantes, mas com algum dado inconsistente ou diferente. No SGBD, para não ocorrer inconsistências, quando um dado muda, o sistema muda todas as cópias junto.
+
+
+# Q6. Considere o cenário de uma empresa de desenvolvimento de software que atende outras empresas como clientes. A empresa organiza seu trabalho em squads (equipes) compostas por desenvolvedores, testadores, líder técnico, supervisor e gerente de produto. Cada squad resolve tarefas (issues) e planeja releases, testes e o cronograma de sprints (iterações) dos projetos de cada cliente.
+## Sem utilizar SQL, elabore um mini-projeto conceitual do banco de dados dessa empresa, deixando claro:
+### a) As principais entidades envolvidas (clientes, squads, membros, tarefas, projetos, sprints, releases). 
+### b) Os principais atributos de cada entidade. 
+
+
+* __Cliente:__
+    * 'id_cliente'
+    * 'nome_empresa'
+    * 'cnpj'
+    * 'email'
+    * 'telefone'
+
+
+* __Squad:__
+    * 'id_squad'
+    * 'nome_squad'
+
+
+* __Membros:__
+    * 'cpf'
+    * 'nome'
+    * 'email'
+    * 'telefone'
+    * 'especialidade'
+
+* __Tarefas:__
+    * 'id_tarefa'
+    * 'nome'
+    * 'descricao'
+
+
+* __Projeto:__
+    * 'id_projeto'
+    * 'nome'
+    * 'descricao'
+    * 'data_inicio'
+    * 'data_fim'
+
+
+* __Sprint:__
+    * 'id_sprint'
+    * 'nome'
+    * 'descricao'
+    * 'data_inicio'
+    * 'data_fim'
+
+
+* __Releases:__
+    * 'id_release'
+    * 'versao'
+    * 'descricao'
+    * 'data'
+
+
+### c) Os relacionamentos entre as entidades (com a cardinalidade, ex.: "um cliente pode ter vários projetos"). 
+
+
+* __Cliente/Projeto:__ __Um cliente__ pode ter __Vários projetos__, mas __Um projeto__ só pode ter __Um cliente__. __(1:N)__
+* __Squad/Membros:__ __Um Squad__ pode ter __vários Membros__, mas __Um Membro__ só pode estar em __Um Squad__. __(1:N)__
+* __Squad/Tarefas:__ __Um Squad__ pode ter __várias tarefas__, mas __Uma tarefa__ só pode ser feita por __Um Squad__. __(1:N)__
+* __Squad/projeto:__ __Um Squad__ pode estar em __Vários Projetos__, e __Um projeto__ pode ter __Vários Squads__. __(N:M)__
+* __Membros/Tarefas:__ __Um Membro__ pode ter __várias Tarefas__, mas __uma tarefa__ é feita por apenas __um membro__. __(1:N)__
+* __Membros/Projeto:__ __Um membro__ pode estar em __vários projetos__, e __um projeto__ pode ter __vários membros__. __(N:M)__
+* __Tarefa/Projeto:__ __Uma Tarefa__ está vinculada a apenas __um projeto__, mas __um projeto__ pode ter __várias tarefas__. __(1:N)__
+* __Projeto/Sprint:__ __Um projeto__ pode ter __vários sprints__, mas __um sprint__ pode ser de apenas __um projeto__. __(1:N)__
+* __Projeto/Releases:__ __Um projeto__ pode ter __varias releases__, mas __uma release__ é de apenas um __projeto__
+
+
+### d) Em linguagem natural, as regras de integridade (restrições) que o banco de dados deveria garantir, ex.: "apenas um líder por squad", "toda tarefa precisa estar vinculada a um projeto".
+
+1. Um Squad deve ter apenas um lider/representante.
+2. Cada Squad devem ter números iguais de membros.
+3. Todo Squad deve ter suas próprias tarefas vinculadas ao grupo.
+4. Toda Tarefa deve estar vinculada a um projeto.
+5. Todo Projeto deve ter um cliente vinculado.
+6. Todo Membro deve fazer parte de apenas um Squad.
+7. Um Membro deve ser vinculado a uma tarefa por vez.
+8. Qualquer atributo de email, cnpj e cpf não podem ser duplicados.
+9. O id de uma entidade não pode ser igual ao id de uma mesma entidade. Projeto1 obrigatoriamente tem id diferente do projeto2.
