@@ -1,5 +1,11 @@
 # Q1. O modelo de dados entidade-relacionamento foi desenvolvido para facilitar o projeto de banco de dados, permitindo especificação de um esquema que representa a estrutura lógica geral de um banco de dados. Descreva os três elementos básicos de um Modelo Entidade Relacionamento (MER).
 
+* Entidades: são os objetos de um banco de dados. As entidades são as coisas que se relacionam, onde costumam se relacionar e interagir outras Entidades. Cliente, Produto e Venda são exemplos de entidades.
+
+* Atributos: São as características das Entidades, seus dados e informações, como o nome e o cpf de um cliente; o id e o preço de um produto; e os produtos e data de uma venda. são nos atributos que cada entidade se diferencia de outra do mesmo tipo.
+
+* Relacionamentos: É a interação entre as entidades. No banco podemos ter Clientes e Contas como Entidades, ou seja, um cliente possui uma conta, então essas duas entidades interagem entre si.
+
 # Q2. Pesquise sobre as várias notações possíveis para Diagramas ER e cite alguns exemplos de notações diferentes para o mesmo conceito (ex.: cardinalidade, entidade subordinada, etc.).
 
 # Q3. Construa um Diagrama ER para projetar a base de dados de uma empresa de desenvolvimento de software com outras empresas como clientes. A base de dados não deve conter redundância de dados. O modelo ER deve ser representado com um diagrama usando Mermaid.js. O modelo deve apresentar, ao menos, entidades, relacionamentos, atributos, identificadores e restrições de cardinalidade. O modelo deve ser feito no nível conceitual, sem incluir chaves estrangeiras. 
