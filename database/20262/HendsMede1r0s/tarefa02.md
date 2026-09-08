@@ -16,6 +16,51 @@ A cardinalidade no diagrama ER é feito com um número 0 ou 1 ou N, seguido de 2
 ### c) Cada squad é formada por vários funcionários e resolve tarefas (issues). Uma tarefa tem código, descrição, prioridade, situação e uma estimativa em horas. As tarefas pertencem a projetos de um cliente. 
 ### d) O trabalho é organizado em iterações (sprints). Uma squad planeja releases para seus clientes; uma release agrupa um conjunto de tarefas e passa por testes de validação.
 
+
+erDiagram
+    CLIENTE{
+        int id_cliente
+        string nome
+        string email
+    }
+
+    FUNCIONARIO{
+        int id_funcionario
+        string nome
+        string email
+        string cargo
+    }
+
+    SQUAD{
+        int id_squad
+        string funcionario
+        string tarefa
+    }
+
+    TAREFA {
+        id_tarefa
+        string descricao
+        string prioridade
+        string situacao
+        int hora
+    }
+
+    PROJETO{
+        id_projeto
+        string squad
+        string descricao
+
+    }
+
+    SPRINTS{
+
+        }
+
+    RELEASES{
+
+        }
+
+
 # Q4. A partir do Diagrama ER da questão anterior, faça o mapeamento para o Modelo Relacional: liste as relações (tabelas), com seus atributos, e identifique as chaves primárias e as chaves estrangeiras de cada relação.
 
 # Q5. Descreva, em linguagem natural, as restrições de integridade referencial que devem ser garantidas no esquema projetado (ex.: "uma tarefa só pode existir vinculada a um projeto de cliente existente", "toda squad deve possuir um líder técnico").
