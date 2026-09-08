@@ -60,12 +60,27 @@ erDiagram
     }
 
     RELEASE{
-        int id PK
+        int id_release PK
         string descricao
     }
 ```
 
 
 # Q4. A partir do Diagrama ER da questão anterior, faça o mapeamento para o Modelo Relacional: liste as relações (tabelas), com seus atributos, e identifique as chaves primárias e as chaves estrangeiras de cada relação.
+
+
+* CLIENTE (id_cliente (PK), nome, email)
+
+* PROJETO (id_projeto (PK), nome, descricao, id_cliente (FK))
+
+* SQUAD (id_squad (PK), nome, descricao)
+
+* FUNCIONARIO (id_funcionario (PK), nome, email, papel, id_squad (FK))
+
+* RELEASE (id_release (PK), descricao, id_squad (FK))
+
+* TAREFA (id_tarefa (PK), descricao, prioridade, situacao, hora, id_projeto (FK), id_squad (FK), id_release (FK))
+
+
 
 # Q5. Descreva, em linguagem natural, as restrições de integridade referencial que devem ser garantidas no esquema projetado (ex.: "uma tarefa só pode existir vinculada a um projeto de cliente existente", "toda squad deve possuir um líder técnico").
