@@ -8,6 +8,8 @@
 
 # Q2. Pesquise sobre as várias notações possíveis para Diagramas ER e cite alguns exemplos de notações diferentes para o mesmo conceito (ex.: cardinalidade, entidade subordinada, etc.).
 
+A cardinalidade no diagrama ER é feito com um número 0 ou 1 ou N, seguido de 2 pontos e logo após um número 1 ou uma letra, que costumar ser N ou M(EX: 1:N, N:M). Já no modelo UML, em vez dos dois pontos usamos reticências, e em vez das letras usamos '*', mas elas querem dizer a mesma coisa(Ex: 1..*, 0..*). Se estivessemos fazendo em crows foot usamos tracinhos '|' para 1 e '|{' para muitos.
+
 # Q3. Construa um Diagrama ER para projetar a base de dados de uma empresa de desenvolvimento de software com outras empresas como clientes. A base de dados não deve conter redundância de dados. O modelo ER deve ser representado com um diagrama usando Mermaid.js. O modelo deve apresentar, ao menos, entidades, relacionamentos, atributos, identificadores e restrições de cardinalidade. O modelo deve ser feito no nível conceitual, sem incluir chaves estrangeiras. 
 ### a) A empresa presta serviços de desenvolvimento de software para outras empresas (clientes). Cada cliente é identificado por um código, um nome e um e-mail de contato. 
 ### b) Os funcionários da empresa trabalham em squads (equipes). Cada funcionário é identificado por um código, um nome e um e-mail, e possui um papel na equipe: desenvolvedor, testador, líder técnico, supervisor ou gerente de produto. 
