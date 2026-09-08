@@ -16,29 +16,37 @@ A cardinalidade no diagrama ER é feito com um número 0 ou 1 ou N, seguido de 2
 ### c) Cada squad é formada por vários funcionários e resolve tarefas (issues). Uma tarefa tem código, descrição, prioridade, situação e uma estimativa em horas. As tarefas pertencem a projetos de um cliente. 
 ### d) O trabalho é organizado em iterações (sprints). Uma squad planeja releases para seus clientes; uma release agrupa um conjunto de tarefas e passa por testes de validação.
 
-
+```mermaid 
 erDiagram
+
+    CLIENTE ||--o{ PROJETO : "possui"
+    SQUAD ||--o{ FUNCIONARIO : "possui"
+    PROJETO ||--o{ TAREFA : "contém"
+    SQUAD ||--o{ TAREFA : "resolve"
+    SQUAD ||--o{ RELEASE : "planeja"
+    RELEASE ||--o{ TAREFA : "agrupa"
+
     CLIENTE{
-        int id_cliente
+        int id_cliente PK
         string nome
         string email
     }
 
     FUNCIONARIO{
-        int id_funcionario
+        int id_funcionario PK
         string nome
         string email
-        string cargo
+        string papel
     }
 
     SQUAD{
-        int id_squad
-        string funcionario
-        string tarefa
+        int id_squad PK
+        string nome
+        string descricao
     }
 
-    TAREFA {
-        id_tarefa
+    TAREFA{
+        int id_tarefa PK
         string descricao
         string prioridade
         string situacao
@@ -46,19 +54,16 @@ erDiagram
     }
 
     PROJETO{
-        id_projeto
-        string squad
+        int id_projeto PK
+        string nome
         string descricao
-
     }
 
-    SPRINTS{
-
-        }
-
-    RELEASES{
-
-        }
+    RELEASE{
+        int id PK
+        string descricao
+    }
+```
 
 
 # Q4. A partir do Diagrama ER da questão anterior, faça o mapeamento para o Modelo Relacional: liste as relações (tabelas), com seus atributos, e identifique as chaves primárias e as chaves estrangeiras de cada relação.
