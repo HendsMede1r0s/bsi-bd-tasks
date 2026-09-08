@@ -84,3 +84,11 @@ erDiagram
 
 
 # Q5. Descreva, em linguagem natural, as restrições de integridade referencial que devem ser garantidas no esquema projetado (ex.: "uma tarefa só pode existir vinculada a um projeto de cliente existente", "toda squad deve possuir um líder técnico").
+
+1. Projeto: Um projeto só pode ser criado se estiver vinculado a um cliente já cadastrado no sistema.
+
+2. Funcionário: Um funcionário só poderá ser alocado em uma squad que já exista no sistema.
+
+3. Release: Uma release só poderá ser planejada e vinculada a uma squad já existente.
+
+4. Tarefa: Uma tarefa só poderá existir se for vinculada a um projeto, a uma squad e a uma release que também já estejam previamente cadastrados no sistema.
